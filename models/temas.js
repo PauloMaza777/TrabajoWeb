@@ -6,13 +6,8 @@ class TemasModel {
         return await query;
     }
 
-    static consultarNormal() {
-        let query = db('temas');
-        db.then((result) => {
-            console.log(result);
-        }).catch((reason) => {
-            conseole.error(result);
-        });
+    static async consultarPorID(id){
+        return await db('temas').where('id_tema', id);
     }
     
 }
